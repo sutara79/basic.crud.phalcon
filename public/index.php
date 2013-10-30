@@ -1,12 +1,19 @@
 <?php
+$test = include("../app/controllers/indexController.php");
 
+if($test){
+    echo "success";
+}else{
+    echo "fail";
+}
+/*
 try {
-echo __DIR__;
+
     //Register an autoloader
     $loader = new \Phalcon\Loader();
     $loader->registerDirs(array(
-        '/var/www/web/sutara79-php/htdocs/app/controllers/',
-        '/var/www/web/sutara79-php/htdocs/app/models/'
+        '../app/controllers/',
+        '../app/models/'
     ))->register();
 
     //Create a DI
@@ -15,14 +22,21 @@ echo __DIR__;
     // DB設定
     $di->set('db', function() {
     	return new \Phalcon\Db\Adapter\Pdo\Sqlite(array(
-				'dbname' => '/var/www/web/sutara79-php/htdocs/public/db/test.sqlite3'
+				'dbname' => 'db/test.sqlite3'
 			));
+		});
+
+		// BaseURI設定
+		$di->set('url', function(){
+		    $url = new Phalcon\Mvc\Url();
+		    $url->setBaseUri('/Phalcon/');
+		    return $url;
 		});
 
     //Setting up the view component
     $di->set('view', function(){
         $view = new \Phalcon\Mvc\View();
-        $view->setViewsDir('/var/www/web/sutara79-php/htdocs/app/views/');
+        $view->setViewsDir('../app/views/');
         return $view;
     });
 
