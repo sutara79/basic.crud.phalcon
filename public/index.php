@@ -75,7 +75,7 @@ try {
     echo $application->handle()->getContent();
 
 } catch(\Phalcon\Exception $e) {
-     echo "PhalconException: ", $e->getMessage();
+     echo "8.: ", $e->getMessage();
 }
 /*
 try {
