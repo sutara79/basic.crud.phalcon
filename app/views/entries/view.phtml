@@ -1,0 +1,16 @@
+<dl class="dl-horizontal">
+	<dt>id</dt>
+	<dd><?php echo $row->id ?></dd>
+
+	<dt>name</dt>
+	<dd><?php echo htmlspecialchars($row->name) ?></dd>
+	
+	<dt>body</dt>
+	<dd><?php echo str_replace("\n", '<br>', htmlspecialchars($row->body)) ?></dd>
+
+	<dt>created</dt>
+	<dd><?php echo $row->created ?></dd>
+
+	<dt>modified</dt>
+	<dd><?php echo $row->modified ?></dd>
+</dl>	
