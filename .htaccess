@@ -1,3 +1,5 @@
 <IfModule mod_rewrite.c>
-	RedirectMatch 302 .* http://www.yahoo.co.jp
+	RewriteEngine on
+	RewriteRule  ^$ public/    [L]
+	RewriteRule  (.*) public/$1 [L]
 </IfModule>
