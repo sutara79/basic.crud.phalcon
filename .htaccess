@@ -1,1 +1,3 @@
-RedirectMatch 302 .* http://www.google.com
+<IfModule mod_rewrite.c>
+	RedirectMatch 302 .* http://www.yahoo.co.jp
+</IfModule>
