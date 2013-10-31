@@ -1,5 +1,5 @@
 <?php
-
+echo __DIR__;
 error_reporting(E_ALL);
 
 try {
