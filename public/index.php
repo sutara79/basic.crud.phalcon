@@ -9,34 +9,31 @@ for ($i=0; $i<count($necessary); $i++) {
 	}
 }
 if ($flag) print '<strong>All of necessaries has loaded.</strong>';
-error_reporting(E_ALL);
 
 try {
 
-	/**
-	 * Read the configuration
-	 */
-	$config = require __DIR__ . "/../app/config/config.php";
+    //Register an autoloader
+    $loader = new \Phalcon\Loader();
+    $loader->registerDirs(array(
+        '../app/controllers/',
+        '../app/models/'
+    ))->register();
 
-	/**
-	 * Include loader
-	 */
-	require __DIR__ . '/../app/config/loader.php';
+    //Create a DI
+    $di = new Phalcon\DI\FactoryDefault();
 
-	/**
-	 * Include services
-	 */
-	require __DIR__ . '/../app/config/services.php';
+    //Setting up the view component
+    $di->set('view', function(){
+        $view = new \Phalcon\Mvc\View();
+        $view->setViewsDir('../app/views/');
+        return $view;
+    });
 
-	/**
-	 * Handle the request
-	 */
-	$application = new \Phalcon\Mvc\Application();
-	$application->setDI($di);
-	echo $application->handle()->getContent();
+    //Handle the request
+    $application = new \Phalcon\Mvc\Application($di);
 
-} catch (Phalcon\Exception $e) {
-	echo $e->getMessage();
-} catch (PDOException $e){
-	echo $e->getMessage();
+    echo $application->handle()->getContent();
+
+} catch(\Phalcon\Exception $e) {
+     echo "PhalconException: ", $e->getMessage();
 }
