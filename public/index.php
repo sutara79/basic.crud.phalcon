@@ -1,6 +1,5 @@
 <?php
-phpinfo();
-/*
+
 try {
 
 	//Register an autoloader
@@ -10,7 +9,29 @@ try {
 		'../app/controllers/',
 		'../app/models/'
 	))->register();
- 
+
+$url = new Phalcon\Mvc\Url();
+
+echo $url->getBaseUri();
+/*
+
+$url = new Phalcon\Mvc\Url();
+
+//Pass the URI in $_GET["_url"]
+$url->setBaseUri('/public/index.php?_url=/');
+
+//Pass the URI using $_SERVER["REQUEST_URI"]
+$url->setBaseUri('/public/index.php/');
+
+$router = new Phalcon\Mvc\Router();
+
+// ... define routes
+$uri = str_replace($_SERVER["SCRIPT_NAME"], '', $_SERVER["REQUEST_URI"]);
+$router->handle($uri);
+
+*/
+
+
 	//Create a DI
 	$di = new Phalcon\DI\FactoryDefault();
 
@@ -20,14 +41,14 @@ try {
 			'dbname' => 'db/test.sqlite3'
 		));
 	});
-
+/*
 	// BaseURI設定
 	$di->set('url', function(){
 		$url = new Phalcon\Mvc\Url();
 		$url->setBaseUri('/Phalcon/');
 		return $url;
 	});
-
+*/
 	//Setting up the view component
 	$di->set('view', function(){
 		$view = new \Phalcon\Mvc\View();
@@ -42,4 +63,4 @@ try {
 
 } catch(\Phalcon\Exception $e) {
 	 echo "PhalconException: ", $e->getMessage();
-}*/
+}
