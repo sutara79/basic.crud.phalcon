@@ -18,14 +18,14 @@ try {
 				'dbname' => 'db/test.sqlite3'
 			));
 		});
-
+/*
 		// BaseURI設定
 		$di->set('url', function(){
 		    $url = new Phalcon\Mvc\Url();
 		    $url->setBaseUri('/Phalcon/');
 		    return $url;
 		});
-
+*/
     //Setting up the view component
     $di->set('view', function(){
         $view = new \Phalcon\Mvc\View();
