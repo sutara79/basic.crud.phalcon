@@ -1,3 +1,4 @@
+<h2>ホーム</h2>
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -15,10 +16,10 @@
 			<?php foreach ($row as $val) : ?>
 			<td><?php echo htmlspecialchars($val) ?></td>
 			<?php endforeach ?>
-			<td nowrap>
+			<td>
 					<?php echo $this->tag->linkTo(array("entries/view/{$row->id}", 'View', 'class'=>'btn btn-primary')) ?>
 					<?php echo $this->tag->linkTo(array("entries/edit/{$row->id}", 'Edit', 'class'=>'btn btn-primary')) ?>
-					<?php echo $this->tag->linkTo(array("entries/delete/{$row->id}", 'Delete', 'class'=>'btn btn-warning')) ?>
+					<?php echo $this->tag->linkTo(array("entries/delete/{$row->id}", 'Delete', 'class'=>'btn btn-warning', 'onclick'=>'return confirmDelete()')) ?>
 			</td>
 		</tr>
 		<?php endforeach ?>

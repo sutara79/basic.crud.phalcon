@@ -1,0 +1,12 @@
+<h2>新規登録</h2>
+<?php echo $this->tag->form(array('entries/insert/', 'role' => 'form')) ?>
+	<div class="form-group">
+		<label for="name">タイトル</label>
+		<input type="text" name="name" class="form-control">
+	</div>
+	<div class="form-group">
+		<label for="body">本文</label>
+		<textarea name="body" class="form-control"></textarea>
+	</div>
+	<input type="submit" value="確定する" class="btn btn-primary">
+</form>
