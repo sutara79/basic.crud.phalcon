@@ -4,6 +4,9 @@ PhalconでCRUD機能を試したサンプルプログラムです。
 まだ作りかけです (^ ^;)  
 Entriesコントローラにアクセスしてみてください。(/entries/index)
 
+## Demo
+http://sutara79-php.eu1.frbit.net/entries/
+
 ## Environments
 - Phalcon 1.2.3
 - SQLite3
