@@ -1,5 +1,7 @@
 # basic.crud.phalcon
 
+ver 0.5
+
 PhalconでCRUD機能を試したサンプルプログラムです。  
 まだ作りかけです (^ ^;)  
 Entriesコントローラにアクセスしてみてください。(/entries/index)
