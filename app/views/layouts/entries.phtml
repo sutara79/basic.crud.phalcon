@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>TestBlog</title>
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<style>
+			table td {
+				max-width: 250px;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>TestBlog</h1>
+				<ul class="nav nav-pills">
+					<li><?php echo $this->tag->linkTo('entries/index', 'ホーム') ?></li>
+					<li><?php echo $this->tag->linkTo('entries/insert', '新規登録') ?></li>
+				</ul>
+			</header>
+			<?php
+			// 下位のビューを読み込む
+			echo $this->getContent();
+			?>
+			<footer>
+				<address class="text-right">
+					<ul class="list-inline">
+						<li>
+							Yuusaku Miyazaki (toumin.m7@gmail.com, <a href="https://github.com/SutaraLumpur/basic.crud.phalcon">GitHub</a>)
+						</li>
+						<li>
+							powered by
+							<a href="http://phalconphp.com/en/">Phalcon</a>,
+							<a href="http://getbootstrap.com/">Bootstrap</a>
+						</li>
+					</ul>
+				</address>
+			</footer>
+		</div>
+		<!-- JavaScript -->
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script>
+			function confirmDelete() {
+				return (confirm('削除してもいいですか?')) ? true : false;
+			}
+		</script>
+	</body>
+</html>

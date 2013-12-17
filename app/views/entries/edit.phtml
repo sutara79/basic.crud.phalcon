@@ -1,0 +1,13 @@
+<h2>編集</h2>
+<?php echo $this->tag->form(array("entries/edit/{$row->id}", 'role' => 'form')) ?>
+	<input type="hidden" name="id" value="<?php echo $row->id ?>">
+	<div class="form-group">
+		<label for="name">タイトル</label>
+		<input type="text" name="name" value="<?php echo htmlspecialchars($row->name) ?>" class="form-control">
+	</div>
+	<div class="form-group">
+		<label for="body">本文</label>
+		<textarea name="body" class="form-control"><?php echo htmlspecialchars($row->body) ?></textarea>
+	</div>
+	<input type="submit" value="確定する" class="btn btn-primary">
+</form>
