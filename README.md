@@ -1,18 +1,15 @@
 # basic.crud.phalcon
-
-ver 0.5
-
 PhalconでCRUD機能を試したサンプルプログラムです。  
 まだ作りかけです (^ ^;)  
 Entriesコントローラにアクセスしてみてください。(/entries/index)
 
 ## Demo
-http://sutara79-php.eu1.frbit.net/entries/
+http://s79-ph-basic.eu1.frbit.net/entries
 
 ## Environments
-- Phalcon 1.2.3
+- Phalcon 1.2.4
 - SQLite3
-- Bootstrap 3.0.0
+- Bootstrap 3.0.2
 
 ## Author
 - Yuusaku Miyazaki (宮崎 雄策)
