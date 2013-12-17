@@ -4,12 +4,12 @@ PhalconでCRUD機能を試したサンプルプログラムです。
 Entriesコントローラにアクセスしてみてください。(/entries/index)
 
 ## Demo
-http://s79-ph-basic.eu1.frbit.net/entries
+http://sutara79-php.eu1.frbit.net/entries/
 
 ## Environments
-- Phalcon 1.2.4
+- Phalcon 1.2.3
 - SQLite3
-- Bootstrap 3.0.2
+- Bootstrap 3.0.0
 
 ## Author
 - Yuusaku Miyazaki (宮崎 雄策)
